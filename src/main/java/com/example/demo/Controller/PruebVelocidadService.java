@@ -4,7 +4,9 @@
  */
 package com.example.demo.Controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,16 +24,26 @@ public class PruebVelocidadService {
 
     
 
-    public List<PruebaVelocidadInternet> obtenerNumeroRegistros() {
+    public Map<String, Object> obtenerNumeroRegistros() {
+        Map<String, Object> respuesta = new HashMap<>();
         WebClient client = WebClient.create();
 
-        return client
+        List<PruebaVelocidadInternet> productos = client
         .get()
         .uri(url)
         .retrieve()
         .bodyToFlux(PruebaVelocidadInternet.class)
         .collectList()
         .block();
+        
+        if(productos!=null){
+            respuesta.put("Numero_de_registros", productos.size());
+        }else{
+            respuesta.put("Error", "No hay registros");
+        }
+        return respuesta;
     
       }
+    
+   
 }

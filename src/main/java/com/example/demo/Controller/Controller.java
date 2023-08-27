@@ -4,10 +4,9 @@
  */
 package com.example.demo.Controller;
 
-import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -19,8 +18,10 @@ public class Controller {
     @Autowired
     PruebVelocidadService pruebVelocidadService;
     
-    @GetMapping("/productos")
-    public List<PruebaVelocidadInternet> getUser() {
+    @GetMapping("/leer-indicadores")
+    public Map<String, Object> getNumeroregistros() {
         return pruebVelocidadService.obtenerNumeroRegistros();
     }
+    
+    
 }

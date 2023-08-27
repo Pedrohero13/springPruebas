@@ -16,25 +16,11 @@ import lombok.Data;
 public class PruebaVelocidadInternet {
     
     private Long folio;
-
-    
     private Double subida;
-
-  
     private Double bajada;
-
-   
     private Double ping;
-
-  
     private String host;
-
-   
     private String isp;
-
-    @JsonFormat(pattern = "yyyy-MM-ddTHH:mm:ss.SSSSSS")
     private LocalDate fecha;
-
-   
     private String comentario;
 }
