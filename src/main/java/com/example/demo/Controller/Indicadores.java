@@ -6,6 +6,8 @@ package com.example.demo.Controller;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import lombok.Data;
 
 /**
@@ -21,6 +23,7 @@ public class Indicadores {
     private Double ping;
     private String host;
     private String isp;
-    private LocalDate fecha;
+    private LocalDateTime fecha;
     private String comentario;
+    
 }
