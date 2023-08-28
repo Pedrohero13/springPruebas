@@ -4,7 +4,7 @@
  */
 package com.example.demo.Controller;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import lombok.Data;
 
 /**
@@ -13,7 +13,7 @@ import lombok.Data;
  */
 @Data
 public class FechaRespuesta {
-        private LocalDateTime fechaInicio;
-        private LocalDateTime fechaFin;
+        private LocalDate fechaInicio;
+        private LocalDate fechaFin;
 
 }
