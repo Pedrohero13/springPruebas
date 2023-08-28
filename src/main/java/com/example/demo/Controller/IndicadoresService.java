@@ -30,10 +30,15 @@ public class IndicadoresService {
         List<Indicadores> indicadores = (List<Indicadores>) entrada.get("Lista");
         List <Indicadores> listaFiltrada = new ArrayList<>();
         
-        for (Indicadores indicador : indicadores) {
+        for (int i = 0; i< indicadores.size(); i++) {
+            Indicadores indicador = indicadores.get(i);
             LocalDateTime fecha = indicador.getFecha();
-            if (fecha.isAfter(fechaRespuesta.getFechaInicio()) && fecha.isBefore(fechaRespuesta.getFechaFin())) {
+            if (fecha.equals(fechaRespuesta.getFechaInicio()) || fecha.isAfter(fechaRespuesta.getFechaInicio()) && fecha.isBefore(fechaRespuesta.getFechaFin())) {
                 listaFiltrada.add(indicador);
+            }
+            if(fecha.isEqual(fechaRespuesta.getFechaFin())){
+                listaFiltrada.add(indicador);
+                i= indicadores.size();
             }
         }
         
