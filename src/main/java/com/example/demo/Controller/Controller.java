@@ -18,7 +18,7 @@ public class Controller {
     @Autowired
     IndicadoresService pruebVelocidadService;
     
-    @GetMapping("/leer-indicadores")
+    @GetMapping("/contar-indicadores")
     public Map<String, Object> getNumeroregistros() {
         return pruebVelocidadService.obtenerNumeroRegistros();
     }
