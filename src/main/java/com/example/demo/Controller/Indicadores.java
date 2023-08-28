@@ -13,7 +13,7 @@ import lombok.Data;
  * @author USER
  */
 @Data
-public class PruebaVelocidadInternet {
+public class Indicadores {
     
     private Long folio;
     private Double subida;

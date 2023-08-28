@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
     @Autowired
-    PruebVelocidadService pruebVelocidadService;
+    IndicadoresService pruebVelocidadService;
     
     @GetMapping("/leer-indicadores")
     public Map<String, Object> getNumeroregistros() {

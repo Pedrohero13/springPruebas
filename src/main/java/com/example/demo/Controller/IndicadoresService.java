@@ -17,7 +17,7 @@ import org.springframework.web.reactive.function.client.WebClient;
  * @author USER
  */
 @Service
-public class PruebVelocidadService {
+public class IndicadoresService {
 
     @Value("${spring.datasource.url}")
     private String url;
@@ -28,11 +28,11 @@ public class PruebVelocidadService {
         Map<String, Object> respuesta = new HashMap<>();
         WebClient client = WebClient.create();
 
-        List<PruebaVelocidadInternet> productos = client
+        List<Indicadores> productos = client
         .get()
         .uri(url)
         .retrieve()
-        .bodyToFlux(PruebaVelocidadInternet.class)
+        .bodyToFlux(Indicadores.class)
         .collectList()
         .block();
         
