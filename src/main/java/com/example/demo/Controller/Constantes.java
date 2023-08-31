@@ -4,16 +4,10 @@
  */
 package com.example.demo.Controller;
 
-import java.time.LocalDateTime;
-import lombok.Data;
-
 /**
  *
  * @author USER
  */
-@Data
-public class FechaRespuesta {
-        private LocalDateTime fechaInicio;
-        private LocalDateTime fechaFin;
-
+public class Constantes {
+    static final String NUMERO_REGISTROS = "Numero_de_registros";
 }
